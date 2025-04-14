@@ -75,8 +75,15 @@ WSGI_APPLICATION = 'learning_resource_manager.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'online_learning_db',     # neon db name from connection str
+        'USER': 'online_learning_db_owner',  # username
+        'PASSWORD': 'npg_wHA73cEGYvSi',    # pwd
+        'HOST': 'ep-damp-cake-a6rh3th6-pooler.us-west-2.aws.neon.tech',
+        'PORT': '5432',                 
+        'OPTIONS': {
+            'sslmode': 'require', # do req. for neon
+        },
     }
 }
 
